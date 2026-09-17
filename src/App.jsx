@@ -5,9 +5,117 @@ import capaLivro from './assets/capa-livro.jpg';
 import marImg from './assets/mar.png';
 import grandCanyonImg from './assets/grand-canyon.jpg';
 import fossilHimalayaImg from './assets/fossil-himalaya.jpg';
-import megafluxosImg from './assets/megafluxos.jpg'; // Importando a imagem do terceiro cartão
+import megafluxosImg from './assets/megafluxos.jpg';
+import gilgameshImg from './assets/gilgamesh.png';
+import atrahasisImg from './assets/Atrahasis.png';
+import sedimentosImg from './assets/sedimentos.jpg';
+import seaImg from './assets/sea.png';
+import pedrasPessoasImg from './assets/pedras-pessoas.png';
+import caldosImg from './assets/caldos.png';
+import falaciaImg from './assets/falacia.png';
+import leituraAcademicaImg from './assets/leitura-academica.png';
+import cienciaBibliaImg from './assets/ciencia-biblia.jpg';
+
+// Importação das bandeiras (.ico)
+import flagPt from './assets/flag-pt.ico';
+import flagEs from './assets/flag-es.ico';
+import flagEn from './assets/flag-en.ico';
+import flagIt from './assets/flag-it.ico';
+import flagDe from './assets/flag-de.ico';
 
 const translations = {
+  pt: {
+    bookTitle: "Além Da Água",
+    navSynopsis: "Sinopse",
+    navScience: "Ciência x Bíblia",
+    navAuthor: "O Autor",
+    navReviews: "Avaliações",
+    navCta: "Adquirir Livro",
+    badge: "✨ Uma obra revolucionária na interseção da fé e da ciência",
+    heroTitle: "E se a ciência mais avançada em geociências e astrofísica estiver, na verdade, validando o relato histórico do Dilúvio descrito há milênios na Bíblia?",
+    heroDesc: "Descubra como a pesquisa contemporânea revela a veracidade física do maior evento hídrico da história humana por meio de dados empíricos.",
+    btnBuy: "Comprar Exemplar Impresso ou Digital",
+    btnExplore: "Explorar o Conteúdo",
+    authorLabel: "Autor:",
+    editorialLabel: "Editora:",
+    visualCardTitle: "O Maior Cataclismo Planetário",
+    visualCardDesc: "Evidências geológicas e hídricas globais sob o crivo científico.",
+    stat1Val: "42+", stat1Text: "Anos de experiência em engenharia hídrica",
+    stat2Val: "200+", stat2Text: "Culturas com mitos de inundação analisados",
+    stat3Val: "6x", stat3Text: "Mais água no interior da Terra do que na superfície",
+    stat4Val: "100%", stat4Text: "Fundamentado em literatura científica de ponta",
+    section1Sub: "Uma jornada intelectual sem precedentes",
+    section1Title: "Mito religioso ou cataclismo físico real?",
+    synopsisP1: "Durante séculos, o relato do Dilúvio universal foi relegado à alegoria ou combatido pelo ceticismo moderno. Este livro quebra o molde tradicional ao conectar dados científicos rigorosos com as Escrituras.",
+    synopsisP2: "Uma obra essencial que analisa reservatórios colossais de vapor cósmico e oceanos minerais profundos no manto terrestre.",
+    card1Title: "As Águas de Cima",
+    card1Desc: "Explore como a astrofísica moderna detecta imensos reservatórios de vapor de água cósmico bilhões de vezes superiores aos nossos oceanos.",
+    card2Title: "As Águas de Baixo",
+    card2Desc: "Analise a descoberta da ringwoodita na zona de transição do manto terrestre: um oceano mineral oculto capaz de abrigar volumes massivos de água.",
+    card3Title: "Memória Cultural Global",
+    card3Desc: "Uma análise comparativa exaustiva de tradições na Mesopotâmia, Ásia, Europa, América e Oceania que demonstram a universalidade do relato.",
+
+    scienceTitle: "Ciência x Bíblia",
+    scienceSub: "Análise Multidisciplinar Rigorosa",
+    mod1Badge: "Módulo 1",
+    mod1Title: "Geologia e Hidrologia",
+    mod1C1: "Análise de estratos sedimentares contínuos em escala continental, sem sinais de erosão prolongada entre as camadas.",
+    mod1C2: "Fósseis marinhos e conchas fossilizadas encontrados em altitudes elevadas nas maiores cordilheiras do mundo.",
+    mod1C3: "Simulações de megafluxos de água baseadas em geomorfologia que explicam a escultura da topografia moderna.",
+    mod1Card1: "Estratos Sedimentares", mod1Card2: "Fósseis em Cordilheiras", mod1Card3: "Megafluxos Hídricos",
+
+    mod2Badge: "Módulo 2",
+    mod2Title: "Arqueologia e Textos Antigos",
+    mod2C1: "Estudo comparativo aprofundado do relato bíblico com o Épico de Gilgamesh e o Atrahasis.",
+    mod2C2: "Análise crítica de tabuletas cuneiformes sumérias e sua concordância com o eixo cronológico.",
+    mod2C3: "Avaliação de achados de escavações estratigráficas recentes no Oriente Médio.",
+    mod2Card1: "Fragmento contendo a narrativa do dilúvio com Utnapishtim.", 
+    mod2Card2: "Tabuleta relacionada à história babilônica do dilúvio", 
+    mod2Card3Html: 'A imagem apresenta o comparativo entre Ur e sítios próximos como Eridu, onde o depósito de lodo esteve ausente. Escavações feitas por <a href="https://www.youtube.com/watch?v=gSXJK63uc6I&t=85s" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">C. Leonard Woolley</a>.',
+
+    mod3Badge: "Módulo 3",
+    mod3Title: "Antropologia e Sociologia",
+    mod3C1: "Exame cruzado de mais de 200 mitos de dilúvio preservados em civilizações distintas ao redor do globo.",
+    mod3C2: "Investigação de tradições orais milenares em culturas asiáticas, nativas americanas e oceânicas.",
+    mod3C3: "Dados genéticos modernos que apontam gargalos populacionais profundos na história humana.",
+    mod3Card1Html: '<a href="https://youtube.com/shorts/27pI5zU8cz0?si=hnH3tAHun96azCGZ" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">Mitos</a> sobre dilúvios aparecem na Mesopotâmia, Grécia, Índia, Mesoamérica e em outros lugares. Uma análise comparativa de fontes primárias, padrões e o que eles revelam.', 
+    mod3Card2Text: "Aborígenes australianos contam que ilhas hoje submersas eram colinas onde caçavam, e que o mar avançou devagar e de forma implacável. A batimetria do pós-último máximo glacial (18.000–7.000 a.P.) prova a inundação de mais de 1,5 milhão de km² de plataformas costeiras.",
+    mod3Card3Text: "O DNA Humano Responde (O Fim do Mito do Funil de 4.500 Anos) Árvore de Haplogrupos do Cromossomo Y (Padrão Global / Filogenia de Alta Resolução)",
+
+    mod4Badge: "Módulo 4",
+    mod4Title: "Teologia e Síntese Multidisciplinar",
+    mod4C1: "Integração final entre as geociências contemporâneas e a exegese bíblica filológica.",
+    mod4C2: "Demonstração sólida da confiabilidade histórica do texto sagrado frente aos questionamentos.",
+    mod4C3: "Síntese acessível e transformadora, dialogando de igual para igual com crentes e céticos.",
+    mod4Card1: "Exegese Bíblica", mod4Card2: "Geociências Integradas", mod4Card3: "Síntese Histórica",
+
+    reviewsHeaderSub: "Avalizado pela Academia e Teologia",
+    reviewsHeaderTitle: "O que dizem os especialistas",
+    review1Text: "O que vemos é um cientista buscando caminhos racionais em paralelo com os atos de Deus. Quem é cristão ou judeu não se decepcionará ao observar diferentes ângulos do evento bíblico com rigor técnico.",
+    review1Author: "Dr. Marcelo Hermes Lima",
+    review1Role: "Professor de Bioquímica na Universidade de Brasília (UnB)",
+    review2Text: "O valor do livro reside nesta tentativa corajosa de colocar a Escritura e a pesquisa científica em diálogo, sem submeter a Bíblia ao tribunal instável de modas intelectuais.",
+    review2Author: "Dr. Isaias Lobão Pereira Junior",
+    review2Role: "Teólogo, Historiador e Professor/Pesquisador (IFTO)",
+    review3Text: "Oferece ao leitor um material sólido, referenciado e metodologicamente transparente, capaz de dar margem a novas pesquisas e revisar os grandes temas bíblicos.",
+    review3Author: "Dr. Pedro Zany Caldeira",
+    review3Role: "Professor Adjunto na Universidade Federal do Triângulo Mineiro (UFTM)",
+    review4Text: "A ciência confirma os dados. A Bíblia dá o significado. E entre ambas está a possibilidade de entender o maior evento da água nas Escrituras sem renunciar à razão.",
+    review4Author: "Rev. Prof. Francisco A. C. Pinho",
+    review4Role: "Bispo anglicano, antropólogo e cientista da religião",
+    authorSectionSub: "Conheça o Autor",
+    authorTitle: "Dr. Frederico Fonseca da Silva",
+    authorBio1: "Engenheiro Agrônomo pela UFPB, com especializações no Instituto Volcani e Israel, Mestrado e Doutorado em Agronomia (UEM), Pós-doutorados na UFPR e na Universidade Complutense de Madrid.",
+    authorBio2: "Possui mais de 42 anos de trajetória profissional atuando diretamente com gestão, conservação, qualidade e engenharia hídrica. Professor e pesquisador no IFPR.",
+    authorBoxTitle: "O que você encontrará neste livro?",
+    authorList1: "Metodologia Rigorosa: Mais de 30 páginas de referências científicas atualizadas.",
+    authorList2: "Exegese Filológica: Análise profunda dos termos hebraicos originais.",
+    authorList3: "Tabela Comparativa Mundial: Síntese detalhada de relatos de inundação globais.",
+    ctaBoxTitle: "Adquira seu exemplar",
+    ctaBoxDesc: "Disponível em formato impresso e digital através dos canais oficiais da editora.",
+    ctaButton: "Contatar Distribuição Oficial",
+    rights: "Todos os direitos reservados."
+  },
   es: {
     bookTitle: "Más Allá Del Agua",
     navSynopsis: "Sinopsis",
@@ -49,20 +157,24 @@ const translations = {
     mod1Card1: "Estratos Continentales", mod1Card2: "Fósiles en Montañas", mod1Card3: "Megafluxos Hídricos",
 
     mod2Badge: "Módulo 2",
-    mod2Title: "Arqueología y Textos Antiguos",
+    mod2Title: "Arqueología y Textos Antigos",
     mod2C1: "Estudio comparativo detallado entre el relato bíblico, el Épico de Gilgamesh y el Atrahasis.",
     mod2C2: "Análisis crítico de tabuletas cuneiformes sumerias y su concordancia cronológica.",
     mod2C3: "Evaluación de hallazgos recientes de excavaciones estratigráficas en el Oriente Medio.",
-    mod2Card1: "Tabuletas Sumerias", mod2Card2: "Épico de Gilgamesh", mod2Card3: "Estratigrafía Antiga",
+    mod2Card1: "Fragmento contendo a narrativa do dilúvio com Utnapishtim.", 
+    mod2Card2: "Tabuleta relacionada à história babilônica do dilúvio", 
+    mod2Card3Html: 'A imagem apresenta o comparativo entre Ur e sítios próximos como Eridu, onde o depósito de lodo esteve ausente. Escavações feitas por <a href="https://www.youtube.com/watch?v=gSXJK63uc6I&t=85s" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">C. Leonard Woolley</a>.',
 
     mod3Badge: "Módulo 3",
-    mod3Title: "Antropología y Sociología",
+    mod3Title: "Antropologia y Sociología",
     mod3C1: "Examen cruzado de más de 200 mitos de diluvio en civilizaciones aisladas de todo el mundo.",
     mod3C2: "Evaluación de tradiciones orales en culturas asiáticas, nativas americanas y oceánicas.",
     mod3C3: "Datos genéticos modernos sobre cuellos de botella poblacionales en la historia humana.",
-    mod3Card1: "Mitos Universales", mod3Card2: "Tradiciones Étnicas", mod3Card3: "Genética de Poblaciones",
+    mod3Card1Html: '<a href="https://youtube.com/shorts/27pI5zU8cz0?si=hnH3tAHun96azCGZ" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">Mitos</a> sobre dilúvios aparecem na Mesopotâmia, Grécia, Índia, Mesoamérica e em outros lugares. Uma análise comparativa de fontes primárias, padrões e o que eles revelam.', 
+    mod3Card2Text: "Aborígenes australianos contam que ilhas hoje submersas eram colinas onde caçavam, e que o mar avançou devagar e de forma implacável. A batimetria do pós-último máximo glacial (18.000–7.000 a.P.) prova a inundação de mais de 1,5 milhão de km² de plataformas costeiras.", 
+    mod3Card3Text: "O DNA Humano Responde (O Fim do Mito do Funil de 4.500 Anos) Árvore de Haplogrupos do Cromossomo Y (Padrão Global / Filogenia de Alta Resolução)",
 
-    mod4Badge: "Módulo 4",
+    mod4Badge: "Module 4",
     mod4Title: "Teología y Síntese Multidisciplinar",
     mod4C1: "Integración final entre las ciencias de la Tierra y la exegesis filológica rigurosa.",
     mod4C2: "Demostración de la confiabilidad histórica del texto sagrado frente al escepticismo.",
@@ -77,7 +189,7 @@ const translations = {
     review2Text: "El valor del libro radica en este valiente intento de poner en diálogo la Escritura y la investigación científica, sin someter la Biblia al tribunal inestable de modas intelectuales.",
     review2Author: "Dr. Isaias Lobão Pereira Junior",
     review2Role: "Teólogo, Historiador y Profesor/Investigador (IFTO)",
-    review3Text: "Ofrece al lector un material sólido, referenciado y metodológicamente transparente, capaz de dar lugar a nuevas investigaciones y de revisar los grandes temas bíblicos.",
+    review3Text: "Ofrece al lector un material sólido, referenciado y metodologicamente transparente, capaz de dar lugar a nuevas investigaciones y de revisar los grandes temas bíblicos.",
     review3Author: "Dr. Pedro Zany Caldeira",
     review3Role: "Profesor Adjunto en la Universidad Federal de Triângulo Mineiro (UFTM)",
     review4Text: "La ciencia confirma los datos. La Biblia da el significado. Y entre ambos está la posibilidad de entender el mayor evento del agua en las Escrituras sin renunciar a la razón.",
@@ -141,14 +253,18 @@ const translations = {
     mod2C1: "Detailed comparative study between the biblical account, the Epic of Gilgamesh, and Atrahasis.",
     mod2C2: "Critical analysis of Sumerian cuneiform tablets and their chronological alignment.",
     mod2C3: "Evaluation of recent stratigraphic excavation findings in the Middle East.",
-    mod2Card1: "Sumerian Tablets", mod2Card2: "Gilgamesh Epic", mod2Card3: "Ancient Stratigraphy",
+    mod2Card1: "Fragmento contendo a narrativa do dilúvio com Utnapishtim.", 
+    mod2Card2: "Tabuleta relacionada à história babilônica do dilúvio", 
+    mod2Card3Html: 'A imagem apresenta o comparativo entre Ur e sítios próximos como Eridu, onde o depósito de lodo esteve ausente. Escavações feitas por <a href="https://www.youtube.com/watch?v=gSXJK63uc6I&t=85s" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">C. Leonard Woolley</a>.',
 
     mod3Badge: "Module 3",
     mod3Title: "Anthropology and Sociology",
     mod3C1: "Cross-examination of over 200 flood myths in isolated civilizations worldwide.",
     mod3C2: "Evaluation of oral traditions across Asian, Native American, and Oceanic cultures.",
     mod3C3: "Modern genetic data regarding population bottlenecks in human history.",
-    mod3Card1: "Universal Myths", mod3Card2: "Ethnic Traditions", mod3Card3: "Population Genetics",
+    mod3Card1Html: '<a href="https://youtube.com/shorts/27pI5zU8cz0?si=hnH3tAHun96azCGZ" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">Mitos</a> sobre dilúvios aparecem na Mesopotâmia, Grécia, Índia, Mesoamérica e em outros lugares. Uma análise comparativa de fontes primárias, padrões e o que eles revelam.', 
+    mod3Card2Text: "Aborígenes australianos contam que ilhas hoje submersas eram colinas onde caçavam, e que o mar avançou devagar e de forma implacável. A batimetria do pós-último máximo glacial (18.000–7.000 a.P.) prova a inundação de mais de 1,5 milhão de km² de plataformas costeiras.", 
+    mod3Card3Text: "O DNA Humano Responde (O Fim do Mito do Funil de 4.500 Anos) Árvore de Haplogrupos do Cromossomo Y (Padrão Global / Filogenia de Alta Resolução)",
 
     mod4Badge: "Module 4",
     mod4Title: "Theology and Multidisciplinary Synthesis",
@@ -183,94 +299,6 @@ const translations = {
     ctaBoxDesc: "Available in print and digital format through official publishing channels.",
     ctaButton: "Contact Official Distribution",
     rights: "All rights reserved."
-  },
-  pt: {
-    bookTitle: "Além Da Água",
-    navSynopsis: "Sinopse",
-    navScience: "Ciência x Bíblia",
-    navAuthor: "O Autor",
-    navReviews: "Avaliações",
-    navCta: "Adquirir Livro",
-    badge: "✨ Uma obra revolucionária na interseção da fé e da ciência",
-    heroTitle: "E se a ciência mais avançada em geociências e astrofísica estiver, na verdade, validando o relato histórico do Dilúvio descrito há milênios na Bíblia?",
-    heroDesc: "Descubra como a pesquisa contemporânea revela a veracidade física do maior evento hídrico da história humana por meio de dados empíricos.",
-    btnBuy: "Comprar Exemplar Impresso ou Digital",
-    btnExplore: "Explorar o Conteúdo",
-    authorLabel: "Autor:",
-    editorialLabel: "Editora:",
-    visualCardTitle: "O Maior Cataclismo Planetário",
-    visualCardDesc: "Evidências geológicas e hídricas globais sob o crivo científico.",
-    stat1Val: "42+", stat1Text: "Anos de experiência em engenharia hídrica",
-    stat2Val: "200+", stat2Text: "Culturas com mitos de inundação analisados",
-    stat3Val: "6x", stat3Text: "Mais água no interior da Terra do que na superfície",
-    stat4Val: "100%", stat4Text: "Fundamentado em literatura científica de ponta",
-    section1Sub: "Uma jornada intelectual sem precedentes",
-    section1Title: "Mito religioso ou cataclismo físico real?",
-    synopsisP1: "Durante séculos, o relato do Dilúvio universal foi relegado à alegoria ou combatido pelo ceticismo moderno. Este livro quebra o molde tradicional ao conectar dados científicos rigorosos com as Escrituras.",
-    synopsisP2: "Uma obra essencial que analisa reservatórios colossais de vapor cósmico e oceanos minerais profundos no manto terrestre.",
-    card1Title: "As Águas de Cima",
-    card1Desc: "Explore como a astrofísica moderna detecta imensos reservatórios de vapor de água cósmico bilhões de vezes superiores aos nossos oceanos.",
-    card2Title: "As Águas de Baixo",
-    card2Desc: "Analise a descoberta da ringwoodita na zona de transição do manto terrestre: um oceano mineral oculto capaz de abrigar volumes massivos de água.",
-    card3Title: "Memória Cultural Global",
-    card3Desc: "Uma análise comparativa exaustiva de tradições na Mesopotâmia, Ásia, Europa, América e Oceania que demonstram a universalidade do relato.",
-
-    scienceTitle: "Ciência x Bíblia",
-    scienceSub: "Análise Multidisciplinar Rigorosa",
-    mod1Badge: "Módulo 1",
-    mod1Title: "Geologia e Hidrologia",
-    mod1C1: "Análise de estratos sedimentares contínuos em escala continental, sem sinais de erosão prolongada entre as camadas.",
-    mod1C2: "Fósseis marinhos e conchas fossilizadas encontrados em altitudes elevadas nas maiores cordilheiras do mundo.",
-    mod1C3: "Simulações de megafluxos de água baseadas em geomorfologia que explicam a escultura da topografia moderna.",
-    mod1Card1: "Estratos Sedimentares", mod1Card2: "Fósseis em Cordilheiras", mod1Card3: "Megafluxos Hídricos",
-
-    mod2Badge: "Módulo 2",
-    mod2Title: "Arqueologia e Textos Antigos",
-    mod2C1: "Estudo comparativo aprofundado do relato bíblico com o Épico de Gilgamesh e o Atrahasis.",
-    mod2C2: "Análise crítica de tabuletas cuneiformes sumérias e sua concordância com o eixo cronológico.",
-    mod2C3: "Avaliação de achados de escavações estratigráficas recentes no Oriente Médio.",
-    mod2Card1: "Tabuletas Sumérias", mod2Card2: "Épico de Gilgamesh", mod2Card3: "Estratigrafia do Oriente",
-
-    mod3Badge: "Módulo 3",
-    mod3Title: "Antropologia e Sociologia",
-    mod3C1: "Exame cruzado de mais de 200 mitos de dilúvio preservados em civilizações distintas ao redor do globo.",
-    mod3C2: "Investigação de tradições orais milenares em culturas asiáticas, nativas americanas e oceânicas.",
-    mod3C3: "Dados genéticos modernos que apontam gargalos populacionais profundos na história humana.",
-    mod3Card1: "Mitos Universais", mod3Card2: "Tradições Ancestrais", mod3Card3: "Gargalos Genéticos",
-
-    mod4Badge: "Módulo 4",
-    mod4Title: "Teologia e Síntese Multidisciplinar",
-    mod4C1: "Integração final entre as geociências contemporâneas e a exegese bíblica filológica.",
-    mod4C2: "Demonstração sólida da confiabilidade histórica do texto sagrado frente aos questionamentos.",
-    mod4C3: "Síntese acessível e transformadora, dialogando de igual para igual com crentes e céticos.",
-    mod4Card1: "Exegese Bíblica", mod4Card2: "Geociências Integradas", mod4Card3: "Síntese Histórica",
-
-    reviewsHeaderSub: "Avalizado pela Academia e Teologia",
-    reviewsHeaderTitle: "O que dizem os especialistas",
-    review1Text: "O que vemos é um cientista buscando caminhos racionais em paralelo com os atos de Deus. Quem é cristão ou judeu não se decepcionará ao observar diferentes ângulos do evento bíblico com rigor técnico.",
-    review1Author: "Dr. Marcelo Hermes Lima",
-    review1Role: "Professor de Bioquímica na Universidade de Brasília (UnB)",
-    review2Text: "O valor do livro reside nesta tentativa corajosa de colocar a Escritura e a pesquisa científica em diálogo, sem submeter a Bíblia ao tribunal instável de modas intelectuais.",
-    review2Author: "Dr. Isaias Lobão Pereira Junior",
-    review2Role: "Teólogo, Historiador e Professor/Pesquisador (IFTO)",
-    review3Text: "Oferece ao leitor um material sólido, referenciado e metodologicamente transparente, capaz de dar margem a novas pesquisas e revisar os grandes temas bíblicos.",
-    review3Author: "Dr. Pedro Zany Caldeira",
-    review3Role: "Professor Adjunto na Universidade Federal do Triângulo Mineiro (UFTM)",
-    review4Text: "A ciência confirma os dados. A Bíblia dá o significado. E entre ambas está a possibilidade de entender o maior evento da água nas Escrituras sem renunciar à razão.",
-    review4Author: "Rev. Prof. Francisco A. C. Pinho",
-    review4Role: "Bispo anglicano, antropólogo e cientista da religião",
-    authorSectionSub: "Conheça o Autor",
-    authorTitle: "Dr. Frederico Fonseca da Silva",
-    authorBio1: "Engenheiro Agrônomo pela UFPB, com especializações no Instituto Volcani e Israel, Mestrado e Doutorado em Agronomia (UEM), Pós-doutorados na UFPR e na Universidade Complutense de Madrid.",
-    authorBio2: "Possui mais de 42 anos de trajetória profissional atuando diretamente com gestão, conservação, qualidade e engenharia hídrica. Professor e pesquisador no IFPR.",
-    authorBoxTitle: "O que você encontrará neste livro?",
-    authorList1: "Metodologia Rigorosa: Mais de 30 páginas de referências científicas atualizadas.",
-    authorList2: "Exegese Filológica: Análise profunda dos termos hebraicos originais.",
-    authorList3: "Tabela Comparativa Mundial: Síntese detalhada de relatos de inundação globais.",
-    ctaBoxTitle: "Adquira seu exemplar",
-    ctaBoxDesc: "Disponível em formato impresso e digital através dos canais oficiais da editora.",
-    ctaButton: "Contatar Distribuição Oficial",
-    rights: "Todos os direitos reservados."
   },
   it: {
     bookTitle: "Oltre L'Acqua",
@@ -317,16 +345,20 @@ const translations = {
     mod2C1: "Studio comparativo tra il racconto biblico, l'Epopea di Gilgamesh e Atrahasis.",
     mod2C2: "Analisi critica di tavolette cuneiformi sumere.",
     mod2C3: "Valutazione dei recenti scavi stratigrafici in Medio Oriente.",
-    mod2Card1: "Tavolette Sumere", mod2Card2: "Epopea di Gilgamesh", mod2Card3: "Stratigrafia",
+    mod2Card1: "Fragmento contendo a narrativa do dilúvio com Utnapishtim.", 
+    mod2Card2: "Tabuleta relacionada à história babilônica do dilúvio", 
+    mod2Card3Html: 'A imagem apresenta o comparativo entre Ur e sítios próximos como Eridu, onde o depósito de lodo esteve ausente. Escavações feitas por <a href="https://www.youtube.com/watch?v=gSXJK63uc6I&t=85s" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">C. Leonard Woolley</a>.',
 
-    mod3Badge: "Modulo 3",
+    mod3Badge: "Module 3",
     mod3Title: "Antropologia e Sociologia",
     mod3C1: "Esame incrociato di oltre 200 miti del diluvio in civiltà distinte.",
     mod3C2: "Valutazione delle tradizioni orali nelle culture asiatiche e indigene.",
     mod3C3: "Dati genetici moderni sui colli di bottiglia della popolazione umana.",
-    mod3Card1: "Miti Universali", mod3Card2: "Tradizioni Etniche", mod3Card3: "Genetica",
+    mod3Card1Html: '<a href="https://youtube.com/shorts/27pI5zU8cz0?si=hnH3tAHun96azCGZ" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">Mitos</a> sobre dilúvios aparecem na Mesopotâmia, Grécia, Índia, Mesoamérica e em outros lugares. Uma análise comparativa de fontes primárias, padrões e o que eles revelam.', 
+    mod3Card2Text: "Aborígenes australianos contam que ilhas hoje submersas eram colinas onde caçavam, e que o mar avançou devagar e de forma implacável. A batimetria do pós-último máximo glacial (18.000–7.000 a.P.) prova a inundação de mais de 1,5 milhão de km² de plataformas costeiras.", 
+    mod3Card3Text: "O DNA Humano Responde (O Fim do Mito do Funil de 4.500 Anos) Árvore de Haplogrupos do Cromossomo Y (Padrão Global / Filogenia de Alta Resolução)",
 
-    mod4Badge: "Modulo 4",
+    mod4Badge: "Module 4",
     mod4Title: "Teologia e Sintesi",
     mod4C1: "Integrazione finale tra geoscienze ed esegesi biblica.",
     mod4C2: "Dimostrazione dell'affidabilità storica del testo sacro.",
@@ -405,16 +437,20 @@ const translations = {
     mod2C1: "Vergleichende Studie des biblischen Berichts mit dem Gilgamesch-Epos.",
     mod2C2: "Kritische Analyse sumerischer Keilschrifttafeln.",
     mod2C3: "Auswertung jüngster stratigraphischer Ausgrabungen im Nahen Osten.",
-    mod2Card1: "Sumerische Tafeln", mod2Card2: "Gilgamesh-Epos", mod2Card3: "Stratigraphie",
+    mod2Card1: "Fragmento contendo a narrativa do dilúvio com Utnapishtim.", 
+    mod2Card2: "Tabuleta relacionada à história babilônica do dilúvio", 
+    mod2Card3Html: 'A imagem apresenta o comparativo entre Ur e sítios próximos como Eridu, onde o depósito de lodo esteve ausente. Escavações feitas por <a href="https://www.youtube.com/watch?v=gSXJK63uc6I&t=85s" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">C. Leonard Woolley</a>.',
 
-    mod3Badge: "Modul 3",
+    mod3Badge: "Module 3",
     mod3Title: "Anthropologie und Soziologie",
     mod3C1: "Kreuzuntersuchung von über 200 Sintflutmythen in verschiedenen Zivilisationen.",
     mod3C2: "Auswertung mündlicher Überlieferungen in indigenen Kulturen.",
     mod3C3: "Moderne genetische Daten zu Bevölkerungsengpässen.",
-    mod3Card1: "Universelle Mythen", mod3Card2: "Ethnische Traditionen", mod3Card3: "Populationsgenetik",
+    mod3Card1Html: '<a href="https://youtube.com/shorts/27pI5zU8cz0?si=hnH3tAHun96azCGZ" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: underline;">Mitos</a> sobre dilúvios aparecem na Mesopotâmia, Grécia, Índia, Mesoamérica e em outros lugares. Uma análise comparativa de fontes primárias, padrões e o que eles revelam.', 
+    mod3Card2Text: "Aborígenes australianos contam que ilhas hoje submersas eram colinas onde caçavam, e que o mar avançou devagar e de forma implacável. A batimetria do pós-último máximo glacial (18.000–7.000 a.P.) prova a inundação de mais de 1,5 milhão de km² de plataformas costeiras.", 
+    mod3Card3Text: "O DNA Humano Responde (O Fim do Mito do Funil de 4.500 Anos) Árvore de Haplogrupos do Cromossomo Y (Padrão Global / Filogenia de Alta Resolução)",
 
-    mod4Badge: "Modul 4",
+    mod4Badge: "Module 4",
     mod4Title: "Theologie und Synthese",
     mod4C1: "Integration zwischen Erdwissenschaften und biblischer Exegese.",
     mod4C2: "Nachweis der historischen Zuverlässigkeit des heiligen Textes.",
@@ -450,9 +486,21 @@ const translations = {
   }
 };
 
+const languagesList = [
+  { code: 'pt', label: 'Português', flag: flagPt },
+  { code: 'es', label: 'Español', flag: flagEs },
+  { code: 'en', label: 'English', flag: flagEn },
+  { code: 'it', label: 'Italiano', flag: flagIt },
+  { code: 'de', label: 'Deutsch', flag: flagDe }
+];
+
 export default function App() {
-  const [lang, setLang] = useState('pt'); // Idioma padrão definido como Português
+  const [lang, setLang] = useState('pt');
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
   const t = translations[lang];
+
+  const currentFlag = languagesList.find((l) => l.code === lang)?.flag || flagPt;
+  const currentLabel = languagesList.find((l) => l.code === lang)?.label || 'Português';
 
   return (
     <div className="app-container">
@@ -472,17 +520,34 @@ export default function App() {
         </ul>
 
         <div className="nav-right">
-          <select 
-            className="lang-selector" 
-            value={lang} 
-            onChange={(e) => setLang(e.target.value)}
-          >
-            <option value="pt">🇧🇷 Português</option>
-            <option value="es">🇪🇸 Español</option>
-            <option value="en">🇬🇧 English</option>
-            <option value="it">🇮🇹 Italiano</option>
-            <option value="de">🇩🇪 Deutsch</option>
-          </select>
+          <div className="custom-lang-selector">
+            <button 
+              className="lang-selector-btn"
+              onClick={() => setLangMenuOpen(!langMenuOpen)}
+              type="button"
+            >
+              <img src={currentFlag} alt={currentLabel} className="lang-flag-icon" />
+              <span>{currentLabel}</span>
+            </button>
+
+            {langMenuOpen && (
+              <div className="lang-dropdown-menu">
+                {languagesList.map((item) => (
+                  <div 
+                    key={item.code}
+                    className={`lang-dropdown-item ${lang === item.code ? 'active' : ''}`}
+                    onClick={() => {
+                      setLang(item.code);
+                      setLangMenuOpen(false);
+                    }}
+                  >
+                    <img src={item.flag} alt={item.label} className="lang-flag-icon" />
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
 
           <a href="#comprar" className="btn-nav">{t.navCta}</a>
         </div>
@@ -511,7 +576,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* BANNER COM A IMAGEM mar.png ANIMADA */}
         <div>
           <div className="flood-visual-card">
             <img src={marImg} alt="Evidencia Científica Diluvio" className="flood-bg-img" />
@@ -610,36 +674,33 @@ export default function App() {
             </div>
             
             <div className="module-evidence-grid">
-              {/* CARTÃO 1: Grand Canyon */}
               <a 
                 href="https://www.usgs.gov/media/images/grand-canyon-john-wesley-powell-1875" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="evidence-subcard"
+                className="evidence-subcard compact-card"
                 title="Abrir imagem oficial do USGS"
               >
                 <img src={grandCanyonImg} alt="Grand Canyon Camadas Sedimentares" />
                 <span>{t.mod1Card1}</span>
               </a>
 
-              {/* CARTÃO 2: Fóssil do Himalaia */}
               <a 
                 href="https://www.iflscience.com/people-are-confused-why-there-are-marine-fossils-at-the-top-of-mount-everest-72096" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="evidence-subcard"
+                className="evidence-subcard compact-card"
                 title="Abrir artigo da IFLScience sobre fósseis marinhos no Everest"
               >
                 <img src={fossilHimalayaImg} alt="Fóssil Marinho no Himalaia" />
                 <span>{t.mod1Card2}</span>
               </a>
 
-              {/* CARTÃO 3: Megafluxos Hídricos com link do IPOL */}
               <a 
                 href="https://ipolcore.ipol.im/demo/clientApp/demo.html?id=205" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="evidence-subcard"
+                className="evidence-subcard compact-card"
                 title="Abrir simulação de megafluxos"
               >
                 <img src={megafluxosImg} alt="Simulação de Megafluxos Hídricos" />
@@ -661,10 +722,40 @@ export default function App() {
                 <li>{t.mod2C3}</li>
               </ul>
             </div>
+            
             <div className="module-evidence-grid">
-              <div className="evidence-subcard"><span>{t.mod2Card1}</span></div>
-              <div className="evidence-subcard"><span>{t.mod2Card2}</span></div>
-              <div className="evidence-subcard"><span>{t.mod2Card3}</span></div>
+              <a 
+                href="https://www.britishmuseum.org/collection/object/W_K-3375" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card"
+                title="Abrir fragmento no British Museum"
+              >
+                <img src={gilgameshImg} alt="Fragmento do dilúvio com Utnapishtim" />
+                <span>{t.mod2Card1}</span>
+              </a>
+
+              <a 
+                href="https://www.britishmuseum.org/collection/object/W_1889-0426-236" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card"
+                title="Abrir tabuleta relacionada à história babilônica do dilúvio"
+              >
+                <img src={atrahasisImg} alt="Tabuleta relacionada à história babilônica do dilúvio" />
+                <span>{t.mod2Card2}</span>
+              </a>
+
+              <a 
+                href="https://www.livius.org/articles/misc/great-flood/flood5/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card"
+                title="Abrir artigo em Livius"
+              >
+                <img src={sedimentosImg} alt="Comparativo estratigráfico Ur e Eridu" />
+                <span dangerouslySetInnerHTML={{ __html: t.mod2Card3Html }}></span>
+              </a>
             </div>
           </div>
 
@@ -682,9 +773,38 @@ export default function App() {
               </ul>
             </div>
             <div className="module-evidence-grid">
-              <div className="evidence-subcard"><span>{t.mod3Card1}</span></div>
-              <div className="evidence-subcard"><span>{t.mod3Card2}</span></div>
-              <div className="evidence-subcard"><span>{t.mod3Card3}</span></div>
+              <a 
+                href="https://mythologis.com/comparative/flood-myths-across-cultures" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card"
+                title="Abrir análise comparativa de mitos"
+              >
+                <img src={pedrasPessoasImg} alt="Mitos sobre dilúvios em várias culturas" />
+                <span dangerouslySetInnerHTML={{ __html: t.mod3Card1Html }}></span>
+              </a>
+
+              <a 
+                href="NunnandReid2016Aboriginalmemoriesofcoastaldrowningprintversion.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card"
+                title="Abrir artigo sobre memória de inundação costeira"
+              >
+                <img src={seaImg} alt="Batimetria e plataformas costeiras" />
+                <span>{t.mod3Card2Text}</span>
+              </a>
+
+              <a 
+                href="https://itol.embl.de/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card"
+                title="Abrir árvore de haplogrupos no iTOL"
+              >
+                <img src={caldosImg} alt="Árvore de Haplogrupos do Cromossomo Y" />
+                <span>{t.mod3Card3Text}</span>
+              </a>
             </div>
           </div>
 
@@ -702,13 +822,65 @@ export default function App() {
               </ul>
             </div>
             <div className="module-evidence-grid">
-              <div className="evidence-subcard"><span>{t.mod4Card1}</span></div>
-              <div className="evidence-subcard"><span>{t.mod4Card2}</span></div>
-              <div className="evidence-subcard"><span>{t.mod4Card3}</span></div>
+              <a 
+                href="https://www.faraday.cam.ac.uk/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card detailed-text-card"
+                title="Abrir Faraday Institute Cambridge"
+              >
+                <img src={falaciaImg} alt="O Divórcio Metodológico" />
+                <div className="compact-desc">
+                  <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>O Divórcio Metodológico</strong>
+                  <span style={{ color: '#ef4444', display: 'block' }}>❌ <strong>A falácia:</strong> Estratigrafia global de 4.500 anos (rejeitado USGS/Geoscience).</span>
+                  <span style={{ color: '#10b981', display: 'block' }}>✅ <strong>O acerto:</strong> Óculos do Bronze Médio (eretz = bacia/região; kol = totalidade idiomática).</span>
+                  <span style={{ color: 'var(--cyan-primary)', display: 'block' }}>🎓 <strong>Apoio:</strong> Faraday Institute Cambridge & STEPBible Lexicon.</span>
+                </div>
+              </a>
+              {/* CARTÃO 2: Resistência Histórica e Gênero */}
+              <a 
+                href="https://www.deadseascrolls.org.il/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card detailed-text-card"
+                title="Abrir Digital Dead Sea Scrolls"
+              >
+                <img src={leituraAcademicaImg} alt="Leitura Acadêmica e Manuscritos" />
+                <div className="compact-desc">
+                  <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Resistência ao Ceticismo Moderno</strong>
+                  <span style={{ color: 'var(--text-muted)', display: 'block' }}>
+                    Resiste sem concordismo geológico anacrônico ao dissociar e integrar três eixos:
+                  </span>
+                  <span style={{ color: '#38bdf8', display: 'block' }}>📜 <strong>Transmissão textual:</strong> estabilidade filológica comprovada.</span>
+                  <span style={{ color: '#38bdf8', display: 'block' }}>🏺 <strong>Arqueologia de proveniência:</strong> contexto material de origem.</span>
+                  <span style={{ color: '#38bdf8', display: 'block' }}>📚 <strong>Gênero literário:</strong> intenção historiográfica/antiga real.</span>
+                </div>
+              </a>
+
+              {/* CARTÃO 3: Rastro Físico e Grito Humano */}
+              <a 
+                href="https://biologos.org/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="evidence-subcard compact-card detailed-text-card"
+                title="Abrir BioLogos"
+              >
+                <img src={cienciaBibliaImg} alt="Ciência e Bíblia" />
+                <div className="compact-desc">
+                  <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Medida e Sentido</strong>
+                  <span style={{ color: 'var(--cyan-primary)', display: 'block' }}>🌊 <strong>Ciência:</strong> mede o rastro físico da água que recuou.</span>
+                  <span style={{ color: 'var(--gold-accent)', display: 'block' }}>✍️ <strong>Filologia & Teologia:</strong> lêem o grito humano que sobreviveu à lama.</span>
+                </div>
+              </a>
             </div>
           </div>
 
         </div>
+        <blockquote className="modules-footer-quote">
+          "A ciência mede o rastro físico da água que recuou; a filologia lê o grito humano que sobreviveu à lama. 
+           O erro apologético é pedir para a rocha assinar um atestado que ela não emitiu, perdendo de vista o 
+           milagre moral de que alguém abriu a porta de um barco em meio ao caos"
+        </blockquote>
       </section>
 
       {/* TESTIMONIALS */}
